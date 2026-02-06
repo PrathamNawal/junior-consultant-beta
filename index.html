@@ -3,63 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baby Trailblazer v1.0.0-PROD</title>
+    <title>BabyForce | Junior Consultant Onboarding</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
         body { font-family: 'Inter', sans-serif; }
-        .card-grad { transition: all 0.3s ease; border: 1px solid #e2e8f0; }
-        .card-grad:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); border-color: #0ea5e9; }
-        .alphabet-letter { font-size: 2.5rem; font-weight: 900; background: linear-gradient(to bottom right, #0ea5e9, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-grad { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #e2e8f0; }
+        .card-grad:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.15); border-color: #0ea5e9; }
+        .alphabet-letter { font-size: 2.8rem; font-weight: 900; background: linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .metric-card { background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid #e2e8f0; text-align: center; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
 
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 px-6 py-4 flex justify-between items-center">
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 px-6 py-3 flex justify-between items-center">
         <div class="flex items-center space-x-2">
-            <div class="bg-sky-600 p-2 rounded-lg text-white"><i class="fas fa-cloud"></i></div>
-            <span class="font-black text-xl tracking-tight text-slate-800 uppercase">BabyForce CRM</span>
+            <div class="bg-sky-600 p-2 rounded-lg text-white shadow-inner"><i class="fas fa-baby"></i></div>
+            <span class="font-black text-xl tracking-tighter text-slate-800 uppercase">JuniorConsultant.io</span>
         </div>
-        <div class="flex items-center space-x-6">
-            <div class="text-right hidden sm:block">
-                <p class="text-[10px] text-slate-400 font-bold uppercase">Estimated Consulting Fees</p>
-                <p id="fee-counter" class="text-sky-600 font-mono font-bold">$0.00</p>
-            </div>
-            <button onclick="triggerAlert()" class="bg-red-500 hover:bg-red-600 text-white text-xs font-bold py-2 px-4 rounded-full shadow-lg transition animate-pulse">
-                REPORT OUTAGE (DIAPER)
-            </button>
-        </div>
+        <button onclick="triggerAlert()" class="bg-red-500 hover:bg-red-600 text-white text-[10px] font-black py-2 px-4 rounded shadow-lg transition uppercase tracking-tighter">
+            Report Production Error
+        </button>
     </nav>
 
-    <header class="max-w-6xl mx-auto px-6 pt-16 pb-12 text-center">
-        <h1 class="text-5xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight">
-            The <span class="text-sky-600">A-Z</span> of Parenting
-        </h1>
-        <p class="text-lg text-slate-500 max-w-2xl mx-auto italic">
-            "Because Gaurav and Sonali know that if a baby's milestone isn't logged in a Dashboard, did it even happen?"
-        </p>
-    </header>
-
-    <main class="max-w-7xl mx-auto px-6 pb-24">
-        
-        <div id="alphabet-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            </div>
-
-        <div class="mt-16 bg-slate-900 rounded-3xl p-8 shadow-2xl border-4 border-slate-800">
-            <div class="flex items-center justify-between mb-6">
-                <div class="flex space-x-2">
-                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+    <section class="bg-gradient-to-r from-sky-700 to-indigo-800 text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-10">
+                <div class="md:w-full space-y-4 text-center">
+                    <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-sky-300">Instance: GAURAV_SONALI_PROD_01</h2>
+                    <h1 class="text-5xl font-black leading-tight">Welcome, New Trailblazer!</h1>
+                    <p class="text-sky-100 text-lg opacity-80">System established February 2026. All parenting permissions have been set to 'Read-Only' (for now).</p>
                 </div>
-                <div class="text-slate-500 font-mono text-xs uppercase tracking-widest">Environment: Nursery-Production-1</div>
             </div>
-            <div id="console" class="font-mono text-sm space-y-2 h-48 overflow-y-auto text-sky-400">
-                <p class="text-slate-500 font-bold italic">// Welcome, Gaurav & Sonali. Initializing Consultant Training...</p>
-                <p>> System check: Milk supply 85%</p>
-                <p>> Sleep cycles: Not found (404 Error)</p>
-                <p>> Click any module to view Consultant Technical Notes.</p>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 -mt-10 mb-16">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="metric-card shadow-xl">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Decibel Level</p>
+                <p class="text-3xl font-black text-red-500">115 <span class="text-sm font-normal text-slate-400">dB</span></p>
+                <p class="text-[10px] text-slate-500 mt-2">Comparable to: Jet Engine</p>
+            </div>
+            <div class="metric-card shadow-xl">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Formula Throughput</p>
+                <p class="text-3xl font-black text-sky-600">8.5 <span class="text-sm font-normal text-slate-400">oz</span></p>
+                <p class="text-[10px] text-slate-500 mt-2">Status: Leakage Detected</p>
+            </div>
+            <div class="metric-card shadow-xl">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Cuteness Rating</p>
+                <p class="text-3xl font-black text-indigo-600">∞ <span class="text-sm font-normal text-slate-400">pts</span></p>
+                <p class="text-[10px] text-slate-500 mt-2">Audit: Over 9000%</p>
+            </div>
+            <div class="metric-card shadow-xl">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Sleep Efficiency</p>
+                <p class="text-3xl font-black text-orange-500">12 <span class="text-sm font-normal text-slate-400">%</span></p>
+                <p class="text-[10px] text-slate-500 mt-2">Error: Service Unavailable</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-6 py-8">
+        <div class="mb-12 border-l-4 border-sky-500 pl-6">
+            <h2 class="text-3xl font-black text-slate-800 uppercase tracking-tight">The A-Z of Parenting Cloud</h2>
+            <p class="text-slate-500">Master the basics before you attempt a complex integration (Preschool).</p>
+        </div>
+        
+        <div id="alphabet-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            </div>
+
+        <div class="mt-20 bg-slate-900 rounded-2xl p-6 shadow-2xl overflow-hidden">
+            <div class="flex items-center space-x-2 mb-4">
+                <div class="w-2 h-2 rounded-full bg-red-400"></div>
+                <div class="w-2 h-2 rounded-full bg-yellow-400"></div>
+                <div class="w-2 h-2 rounded-full bg-green-400"></div>
+                <span class="text-slate-500 text-[10px] font-mono ml-4 uppercase tracking-widest">Real-Time Event Log</span>
+            </div>
+            <div id="console" class="font-mono text-xs h-40 overflow-y-auto text-sky-300 space-y-1">
+                <p>> [LOG] Diaper deployment started...</p>
+                <p>> [SUCCESS] Milk transaction complete.</p>
+                <p>> [WARN] Nap_Timer approaching zero...</p>
+                <p>> Click any letter for Technical Consultant Notes.</p>
             </div>
         </div>
     </main>
@@ -69,29 +94,29 @@
             {l: 'A', t: 'AppExchange', d: 'Third-party baby gear that promises to fix your sleep but costs a fortune.', n: 'Note: Soft toys have zero ROI.'},
             {l: 'B', t: 'Backlog', d: 'The 500 unread WhatsApp messages from your parents asking for photos.', n: 'High Priority: Update grandparents or suffer churn.'},
             {l: 'C', t: 'CPQ', d: 'Configure, Poop, Quiet. The standard quote-to-crib process.', n: 'Discounting not allowed on feeding times.'},
-            {l: 'D', t: 'Deployment', d: 'Successfully moving a sleeping baby into a crib without triggering a sensor.', n: 'Deployment failure results in a full system reboot (crying).'},
+            {l: 'D', t: 'Deployment', d: 'Successfully moving a sleeping baby into a crib without triggering a sensor.', n: 'Failure results in a full system reboot (crying).'},
             {l: 'E', t: 'Ecosystem', d: 'The living room floor, now a hazardous landscape of blocks and fur.', n: 'Watch for Lego-based Governor Limits.'},
             {l: 'F', t: 'Flow', d: 'The automated logic: If Hunger > 50%, Then Scream = TRUE.', n: 'Optimization: Add "Pacifier" element to the flow.'},
             {l: 'G', t: 'Governor Limits', d: 'Strict daily limits on how many times Mom can hear "Baby Shark" before a crash.', n: 'Limit exceeded: Initiating Wine.exe.'},
             {l: 'H', t: 'Hotfix', d: 'Emergency diaper changes performed on the fly with no documentation.', n: 'Always carry a backup deployment kit.'},
             {l: 'I', t: 'Integration', d: 'Introducing the baby to the family dog. High risk of sync errors.', n: 'Data Mapping: Baby food -> Dog mouth.'},
-            {l: 'J', t: 'JSON', d: 'Junior’s Standard Output of Noise. A high-frequency data stream.', n: 'Parse carefully: Is it hunger or just bored?'},
-            {l: 'K', t: 'KPIs', d: 'Key Performance Indicators: Weight gain, sleep hours, and diaper volume.', n: 'Performance review scheduled for every 3 AM.'},
+            {l: 'J', t: 'JSON', d: 'Junior Standard Output of Noise. A high-frequency data stream.', n: 'Parse carefully: Hunger or Boredom?'},
+            {l: 'K', t: 'KPIs', d: 'Key Performance Indicators: Weight gain and diaper volume.', n: 'Weekly sprints include tummy time.'},
             {l: 'L', t: 'Lightning', d: 'The speed at which a toddler reaches for a dangerous electrical outlet.', n: 'UX Issue: Buttons are too tempting.'},
-            {l: 'M', t: 'Metadata', d: 'The data about the baby (Height, weight, eye color).', n: 'Non-configurable; inherited from Parent Objects.'},
-            {l: 'N', t: 'Naming Convention', d: 'Choosing a name that sounds like a CEO but is easy to yell in a park.', n: 'Must be unique in the Org (Neighborhood).'},
+            {l: 'M', t: 'Metadata', d: 'The data about the baby. Non-configurable; inherited from Parent Objects.', n: 'Read-only attributes.'},
+            {l: 'N', t: 'Naming Convention', d: 'A name that sounds like a CEO but is easy to yell in a park.', n: 'Must be unique in the Neighborhood Org.'},
             {l: 'O', t: 'Ohana', d: 'The family. No one gets left behind, unless they have a meeting at 9 AM.', n: 'Collaboration is key to uptime.'},
-            {l: 'P', t: 'Permission Sets', d: 'Who is allowed to hold the baby? (Grandparents = Full Access).', n: 'Note: Stranger access is restricted by default.'},
-            {l: 'Q', t: 'Query', d: 'The constant questioning from a toddler: "Why? Why? Why?"', n: 'SOQL: SELECT Answers FROM Parents WHERE Patience > 0.'},
-            {l: 'R', t: 'Rollback', d: 'When the baby spits out the organic kale you spent an hour steaming.', n: 'Transaction failed. Reverting to mashed bananas.'},
-            {l: 'S', t: 'Sandbox', d: 'A controlled environment for playing with dirt and water.', n: 'Warning: Sand will be synced to the Carpet object.'},
-            {l: 'T', t: 'Trailhead', d: 'The path of Cheerios leading from the kitchen to the bedroom.', n: 'Collect badges (diaper points) for rewards.'},
-            {l: 'U', t: 'Uptime', d: 'The rare moments when the baby is asleep and the house is silent.', n: 'Uptime usually lasts 45 minutes.'},
-            {l: 'V', t: 'Validation Rule', d: 'The law that states: "If it is on the floor, it must go in the mouth."', n: 'Error: Cannot save object "Marble" to mouth.'},
-            {l: 'W', t: 'Workflow', d: 'Wake up -> Eat -> Play -> Poop -> Repeat.', n: 'Strict adherence to workflow is required for sanity.'},
-            {l: 'X', t: 'XML', d: 'eXtra Messy Living-room. The standard state of production.', n: 'Formatting: Inconsistent.'},
-            {l: 'Y', t: 'Yield', d: 'Total output of cuteness vs. total input of investment.', n: 'ROI: Infinite, despite high maintenance costs.'},
-            {l: 'Z', t: 'Zero-Touch', d: 'The dream of a baby that puts themselves to sleep.', n: 'Feature currently in "Coming Soon" status (approx. 2038).'}
+            {l: 'P', t: 'Permission Sets', d: 'Who is allowed to hold the baby? (Grandparents = SuperUser).', n: 'Guest access restricted.'},
+            {l: 'Q', t: 'Query', d: 'The constant questioning from a toddler: "Why? Why? Why?"', n: 'SELECT Answers FROM Parents WHERE Coffee > 0.'},
+            {l: 'R', t: 'Rollback', d: 'When the baby spits out the organic kale you spent an hour steaming.', n: 'Transaction failed. Reverting to Milk.'},
+            {l: 'S', t: 'Sandbox', d: 'A controlled environment for playing with dirt and water.', n: 'Warning: Sand will be synced to the Carpet.'},
+            {l: 'T', t: 'Trailhead', d: 'The path of Cheerios leading from the kitchen to the bedroom.', n: 'Collect badges for successful naps.'},
+            {l: 'U', t: 'Uptime', d: 'The rare moments when the baby is asleep and the house is silent.', n: 'Average uptime: 42 minutes.'},
+            {l: 'V', t: 'Validation Rule', d: 'The law: "If it is on the floor, it must go in the mouth."', n: 'Error: Cannot save object "Remote" to mouth.'},
+            {l: 'W', t: 'Workflow', d: 'Wake up -> Eat -> Play -> Poop -> Repeat.', n: 'Strict adherence required for parental sanity.'},
+            {l: 'X', t: 'XML', d: 'eXtra Messy Living-room. The standard state of production.', n: 'Formatting: Inconsistent and chaotic.'},
+            {l: 'Y', t: 'Yield', d: 'Total output of cuteness vs. total input of investment.', n: 'ROI: Infinite (eventually).'},
+            {l: 'Z', t: 'Zero-Touch', d: 'The dream of a baby that puts themselves to sleep.', n: 'Status: Pending future release (v2.0).'}
         ];
 
         const grid = document.getElementById('alphabet-grid');
@@ -99,34 +124,27 @@
 
         alphabet.forEach(item => {
             const card = document.createElement('div');
-            card.className = "card-grad bg-white p-6 rounded-2xl cursor-pointer";
+            card.className = "card-grad bg-white p-6 rounded-2xl cursor-pointer group";
             card.innerHTML = `
-                <span class="alphabet-letter">${item.l}</span>
-                <h3 class="text-xl font-bold text-slate-800 mt-2">${item.t}</h3>
-                <p class="text-slate-500 text-sm mt-3 leading-relaxed">${item.d}</p>
+                <span class="alphabet-letter group-hover:scale-110 transition-transform inline-block">${item.l}</span>
+                <h3 class="text-lg font-black text-slate-800 mt-2">${item.t}</h3>
+                <p class="text-slate-500 text-xs mt-3 font-medium leading-relaxed">${item.d}</p>
             `;
             card.onclick = () => {
                 const log = document.createElement('p');
-                log.innerHTML = `<span class="text-yellow-400">[CONSULTANT TIP]</span> ${item.n}`;
+                log.innerHTML = `<span class="text-yellow-400">[INSIGHT]</span> Analyzing <strong>${item.t}</strong>: ${item.n}`;
                 consoleBox.prepend(log);
             };
             grid.appendChild(card);
         });
 
         function triggerAlert() {
-            alert("DIAPER OVERFLOW DETECTED. Please initiate emergency cleanup protocol.");
             const log = document.createElement('p');
-            log.className = "text-red-500 font-bold";
-            log.innerHTML = `[CRITICAL] P0 Diaper Incident reported at ${new Date().toLocaleTimeString()}`;
+            log.className = "text-red-400 font-bold";
+            log.innerHTML = `[CRITICAL] P0 Diaper Incident at ${new Date().toLocaleTimeString()}! Initiating cleanup script...`;
             consoleBox.prepend(log);
+            alert("⚠️ SYSTEM ALERT: Diaper capacity reached 100%. Please deploy cleaning crew immediately.");
         }
-
-        // Consulting Fee Counter
-        let fees = 0;
-        setInterval(() => {
-            fees += 0.75;
-            document.getElementById('fee-counter').innerText = `$${fees.toLocaleString(undefined, {minimumFractionDigits: 2})}`;
-        }, 1000);
     </script>
 </body>
 </html>
