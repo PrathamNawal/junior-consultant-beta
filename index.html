@@ -8,152 +8,190 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f3f2f2; scroll-behavior: smooth; }
         
-        body { font-family: 'Inter', sans-serif; background-color: #f3f2f2; }
+        .hero-gradient { background: linear-gradient(135deg, #1b5fbe 0%, #0176d3 100%); }
+        .card-slds { background: white; border: 1px solid #dddbda; border-radius: 0.5rem; transition: all 0.2s ease; }
+        .card-slds:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border-color: #0176d3; }
         
-        .hero-gradient {
-            background: linear-gradient(135deg, #1b5fbe 0%, #0176d3 100%);
-        }
-
-        .card-slds {
-            background: white;
-            border: 1px solid #dddbda;
-            transition: all 0.2s ease;
-        }
-
-        .card-slds:hover {
-            box-shadow: 0 4px 15px rgba(1, 118, 211, 0.15);
-            border-color: #0176d3;
-            transform: translateY(-2px);
-        }
-
-        .alphabet-letter {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: #0176d3;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .baby-welcome-box {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(12px);
-            border-radius: 20px;
-        }
-
-        .fee-pulse {
-            animation: pulse-blue 2s infinite;
-        }
-
-        @keyframes pulse-blue {
-            0% { color: #ffffff; }
-            50% { color: #62b7ed; }
-            100% { color: #ffffff; }
-        }
+        .alphabet-letter { font-size: 2.5rem; font-weight: 900; color: #0176d3; line-height: 1; }
+        .timeline-connector { position: relative; }
+        .timeline-connector::after { content: ''; position: absolute; top: 1.25rem; left: 2rem; width: 100%; height: 2px; background: #e2e8f0; z-index: 0; }
+        
+        /* Custom Scrollbar for Console */
+        #console::-webkit-scrollbar { width: 6px; }
+        #console::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
     </style>
 </head>
 <body class="text-slate-900">
 
-    <nav class="sticky top-0 z-50 bg-[#001639] text-white px-6 py-2 flex justify-between items-center text-[11px] font-bold uppercase tracking-wider">
+    <nav class="sticky top-0 z-50 bg-[#001639] text-white px-6 py-2 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest">
         <div class="flex items-center space-x-4">
-            <span><i class="fas fa-baby-carriage mr-2 text-sky-400"></i> RESOURCE: JUNIOR_CONSULTANT_01</span>
+            <span class="flex items-center"><i class="fas fa-baby-carriage mr-2 text-sky-400"></i> RESOURCE: JUNIOR_CONSULTANT_01</span>
             <span class="opacity-30">|</span>
-            <span class="text-green-400">● Status: Newly Deployed</span>
+            <span class="text-green-400">● Status: Production Live</span>
         </div>
         <div class="flex items-center space-x-4">
             <div class="bg-white/10 px-3 py-1 rounded border border-white/20">
-                <span class="text-sky-300 mr-2">Accrued Training Fees:</span>
-                <span id="fee-counter" class="fee-pulse">$0.00</span>
+                <span class="text-sky-300 mr-2">Est. Training Fees:</span>
+                <span id="fee-counter" class="font-mono">$0.00</span>
             </div>
         </div>
     </nav>
 
-    <header class="hero-gradient text-white pt-16 pb-28 px-6 relative overflow-hidden text-center md:text-left">
+    <header class="hero-gradient text-white pt-16 pb-24 px-6 relative overflow-hidden">
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-3/5 space-y-6">
-                    <h1 class="text-6xl font-black tracking-tighter">Welcome to the Team, Little Guy!</h1>
-                    
-                    <div class="baby-welcome-box p-8 shadow-2xl relative">
-                        <i class="fas fa-quote-left absolute top-4 left-4 opacity-20 text-4xl"></i>
+                <div class="md:w-2/3 space-y-6">
+                    <h1 class="text-5xl md:text-6xl font-black tracking-tighter italic">Welcome to the Org, Little One!</h1>
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl shadow-2xl">
                         <p class="text-xl leading-relaxed font-medium">
-                            Hey there, Junior Consultant! Welcome to the best 'Org' you could ever join. Your Mom and Dad are the most incredible Architects I know, but I have a feeling you’re about to teach them things they never found in a Trailhead module. 
+                            "Hey there, Junior Consultant! Welcome to the best 'Org' you could ever join. Your Mom and Dad are the most incredible Architects I know, but I have a feeling you’re about to teach them things they never found in a Trailhead module. 
                             <br><br>
-                            I can't wait to see you grow, break a few validation rules, and remind everyone that the best integrations in life aren't made of code—they're made of love. Get ready for a lifetime of Superbadges!
+                            I can't wait to see you grow, break a few validation rules, and remind everyone that the best integrations in life aren't made of code—they're made of love."
                         </p>
-                        <div class="mt-6 flex items-center justify-center md:justify-start space-x-3">
-                            <p class="font-bold text-sky-200 tracking-widest uppercase text-sm italic">— Love, your favorite Uncle</p>
-                        </div>
+                        <p class="mt-6 font-bold text-sky-200 tracking-widest uppercase text-sm">— Love, your favorite Uncle</p>
                     </div>
                 </div>
-
-                <div class="md:w-2/5 w-full">
-                    <div class="bg-white/10 p-6 rounded-2xl border border-white/20 backdrop-blur-md">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <div class="h-10 w-10 bg-sky-400 rounded-full flex items-center justify-center shadow-lg">
-                                <i class="fas fa-user-tie text-sky-900"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-sm font-bold uppercase">Employee Profile</h3>
-                                <p class="text-[10px] opacity-60">ID: BBY-2026-001</p>
-                            </div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
-                                <div class="h-full bg-green-400 w-[100%]"></div>
-                            </div>
-                            <p class="text-[10px] font-bold uppercase tracking-widest opacity-70">Core Competency: Cuteness (100%)</p>
-                            
-                            <div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
-                                <div class="h-full bg-orange-400 w-[15%]"></div>
-                            </div>
-                            <p class="text-[10px] font-bold uppercase tracking-widest opacity-70">Project Phase: Sleep Cycle (Beta Testing)</p>
-                        </div>
+                
+                <div class="md:w-1/3 w-full grid grid-cols-2 gap-4">
+                    <div class="bg-white/10 p-4 rounded-xl border border-white/20 text-center">
+                        <p class="text-[10px] uppercase font-bold opacity-60">Cuteness</p>
+                        <p class="text-2xl font-black">∞ Index</p>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-xl border border-white/20 text-center">
+                        <p class="text-[10px] uppercase font-bold opacity-60">Uptime</p>
+                        <p class="text-2xl font-black text-orange-300">12%</p>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-xl border border-white/20 text-center">
+                        <p class="text-[10px] uppercase font-bold opacity-60">Milk Sync</p>
+                        <p class="text-2xl font-black text-green-300">100%</p>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-xl border border-white/20 text-center">
+                        <p class="text-[10px] uppercase font-bold opacity-60">Babbles</p>
+                        <p class="text-2xl font-black">45/min</p>
                     </div>
                 </div>
             </div>
         </div>
-        <i class="fas fa-cloud absolute -bottom-20 -left-20 text-white/5 text-[25rem]"></i>
     </header>
 
-    <main class="max-w-7xl mx-auto px-6 py-12 -mt-16">
-        <div class="bg-white p-8 rounded-t-xl border-x border-t border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div>
-                <h2 class="text-2xl font-black text-slate-800 tracking-tight uppercase">Master Curriculum: The ABCD's</h2>
-                <p class="text-slate-500 font-medium text-sm italic text-salesforce-blue">"Your guide to managing Gaurav and Sonali."</p>
+    <main class="max-w-7xl mx-auto px-6 -mt-12 mb-20">
+        
+        <section class="mb-12 bg-white rounded-xl shadow-lg p-8 border border-slate-200">
+            <h2 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-8 text-center">Project Roadmap: Senior to Junior Associate</h2>
+            <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-4">
+                <div class="flex-1 text-center timeline-connector">
+                    <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white mx-auto mb-4 relative z-10 shadow-lg"><i class="fas fa-running"></i></div>
+                    <h3 class="font-bold text-sm">Phase 4: Senior (Toddler)</h3>
+                    <p class="text-[10px] text-slate-500 mt-2 px-4">Expert in manual data relocation (throwing toys) and furniture stress-testing.</p>
+                </div>
+                <div class="flex-1 text-center timeline-connector">
+                    <div class="w-10 h-10 bg-sky-500 rounded-full flex items-center justify-center text-white mx-auto mb-4 relative z-10 shadow-lg"><i class="fas fa-hands-bubbles"></i></div>
+                    <h3 class="font-bold text-sm">Phase 3: Mid-Level (Crawler)</h3>
+                    <p class="text-[10px] text-slate-500 mt-2 px-4">Mastering mobility and 'Search & Rescue' operations under the sofa.</p>
+                </div>
+                <div class="flex-1 text-center timeline-connector">
+                    <div class="w-10 h-10 bg-sky-400 rounded-full flex items-center justify-center text-white mx-auto mb-4 relative z-10 shadow-lg"><i class="fas fa-chair"></i></div>
+                    <h3 class="font-bold text-sm">Phase 2: Associate (Sitter)</h3>
+                    <p class="text-[10px] text-slate-500 mt-2 px-4">Vertical stability specialist and lead for Solid Food UAT testing.</p>
+                </div>
+                <div class="flex-1 text-center">
+                    <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white mx-auto mb-4 relative z-10 shadow-lg animate-pulse"><i class="fas fa-star"></i></div>
+                    <h3 class="font-bold text-sm">Phase 1: Junior (Newborn)</h3>
+                    <p class="text-[10px] text-slate-500 mt-2 px-4 italic font-semibold text-sky-600">CURRENT STATUS: High-frequency vocal alerts and milk-intake optimization.</p>
+                </div>
             </div>
-            <button onclick="triggerAlert()" class="bg-[#0176d3] text-white px-8 py-3 rounded shadow-lg font-bold text-xs hover:bg-blue-700 transition transform hover:scale-105 uppercase tracking-widest">
-                Request Milk Integration
-            </button>
+        </section>
+
+        <div class="mb-6 flex items-center justify-between border-b border-slate-300 pb-4">
+            <h2 class="text-2xl font-black text-slate-800 tracking-tight uppercase">Master Curriculum (A-Z)</h2>
+            <button onclick="triggerAlert()" class="bg-red-500 text-white px-4 py-2 rounded text-[10px] font-bold uppercase hover:bg-red-600 transition">Report P0 Incident</button>
         </div>
         
-        <div id="alphabet-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-slate-200">
+        <div id="alphabet-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             </div>
 
-        <div class="mt-12 bg-[#16325c] rounded-xl p-8 shadow-2xl border border-slate-700">
-            <div class="flex items-center space-x-2 mb-6 border-b border-white/10 pb-4">
-                <i class="fas fa-terminal text-sky-400"></i>
-                <span class="text-white text-[10px] font-bold uppercase tracking-widest">System-Nursery-Logs</span>
+        <div class="mt-12 bg-slate-900 rounded-xl p-6 shadow-2xl border border-slate-700">
+            <div class="flex items-center space-x-2 mb-4">
+                <i class="fas fa-terminal text-sky-400 text-xs"></i>
+                <span class="text-white text-[10px] font-bold uppercase tracking-widest">Nursery-Sync-Terminal</span>
             </div>
-            <div id="console" class="font-mono text-xs h-40 overflow-y-auto text-sky-200 space-y-2">
-                <p class="text-green-400 font-bold">> [SUCCESS] User 'Little Prince' successfully logged into World.org</p>
-                <p>> [INFO] Establishing connection with Gaurav_Admin and Sonali_Admin...</p>
-                <p>> [WARN] Hunger_Trigger set to: Immediate.</p>
-                <p class="opacity-40">> [SYSTEM] Awaiting input from the newest Trailblazer...</p>
+            <div id="console" class="font-mono text-[11px] h-32 overflow-y-auto text-sky-300 space-y-1">
+                <p>> [SUCCESS] Instance 'Baby Boy' provisioned in Bengaluru Org.</p>
+                <p>> [INFO] Loading Sweet_Brotherly_Message.pkg...</p>
+                <p>> [SYSTEM] Click a card to view Consultant Analysis.</p>
             </div>
         </div>
     </main>
 
-    <footer class="text-center py-16 text-slate-400 text-xs tracking-widest uppercase font-bold">
-        <p>Built by your Uncle | Salesforce Partner Nursery Program</p>
+    <footer class="text-center py-12 text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em]">
+        Built with Love for Gaurav, Sonali, and the New Boss.
     </footer>
 
     <script>
-        const alphabet = [
-            {l: 'A', t: 'AppExchange', d: 'Third-party baby gear that promises to fix your sleep but costs a fortune.', n: 'Note: Soft toys have zero ROI compared to Dad\'s keys.'},
-            {l: 'B', t: 'Backlog', d: 'The 500 unread WhatsApp messages from your parents asking for photos.', n: 'Action: Just smile once; it clears the backlog instantly.'},
-            {l: 'C', t: 'CPQ', d: 'Configure, Poop, Quiet. The standard quote-to-crib process.', n: 'Constraint: Mom\'s patience has a hard-coded limit.'},
-            {l: 'D', t: 'Deployment', d: 'Successfully moving a sleeping baby into a crib without triggering a sensor.', n: 'Pro-Tip: Use a "Warm Blanket" patch to avoid deployment failure.'},
-            {l: 'E', t: 'Ecosystem', d: 'The living room floor, now a hazardous landscape of blocks and fur.', n: 'Governor Limit: No eating the dog\'s data (kibble).'},
-            {l: 'F', t: 'Flow', d: 'The automated logic: If Hunger > 50%, Then Scream = TRUE.', n: 'Note: Crying is the most powerful workflow
+        const curriculum = [
+            {l: 'A', t: 'AppExchange', d: 'Expensive gear that costs a fortune.', n: 'Tip: The cardboard box has higher engagement metrics.'},
+            {l: 'B', t: 'Backlog', d: '500 unread messages from grandparents.', n: 'Tip: One smile clears the queue instantly.'},
+            {l: 'C', t: 'CPQ', d: 'Configure, Poop, Quiet.', n: 'Tip: No discounts allowed on 3 AM feedings.'},
+            {l: 'D', t: 'Deployment', d: 'Moving sleeping baby to crib.', n: 'Tip: Floorboards are Validation Rules. Do not trigger.'},
+            {l: 'E', t: 'Ecosystem', d: 'The living room floor hazard zone.', n: 'Tip: Watch for Lego-based Governor Limits.'},
+            {l: 'F', t: 'Flow', d: 'If Hunger > 50%, Then Scream = TRUE.', n: 'Tip: Pacifier = Logic Bypass Module.'},
+            {l: 'G', t: 'Governor Limits', d: 'Max "Baby Shark" repeats per hour.', n: 'Tip: Limit exceeded. Initiating Wine.exe.'},
+            {l: 'H', t: 'Hotfix', d: 'Emergency diaper changes.', n: 'Tip: Maintain 100% wipe coverage in staging.'},
+            {l: 'I', t: 'Integration', d: 'Introducing the baby to the family dog.', n: 'Tip: High risk of sync errors (licks).'},
+            {l: 'J', t: 'JSON', d: 'Junior Standard Output of Noise.', n: 'Tip: Parse carefully—is it gas or hunger?'},
+            {l: 'K', t: 'KPIs', d: 'Weight gain and diaper volume.', n: 'Tip: Target 100% cuteness adoption.'},
+            {l: 'L', t: 'Lightning', d: 'The speed you move toward a power outlet.', n: 'Tip: All outlets look like buttons to the user.'},
+            {l: 'M', t: 'Metadata', d: 'Inherited traits from Parent Objects.', n: 'Tip: Gaurav\'s humor + Sonali\'s logic.'},
+            {l: 'N', t: 'Naming Convention', d: 'Picking a name that sounds like a CEO.', n: 'Tip: Must be unique in the Bengaluru Org.'},
+            {l: 'O', t: 'Ohana', d: 'The family support tier.', n: 'Tip: Grandparents have SuperUser access.'},
+            {l: 'P', t: 'Permission Sets', d: 'Who gets to hold the baby.', n: 'Tip: Access denied for unwashed hands.'},
+            {l: 'Q', t: 'Query', d: 'The toddler "Why? Why? Why?" loop.', n: 'Tip: SELECT Hug FROM Uncle WHERE Cuteness = Max.'},
+            {l: 'R', t: 'Rollback', d: 'Spitting out organic kale.', n: 'Tip: Transaction failed. Reverting to Milk.pkg.'},
+            {l: 'S', t: 'Sandbox', d: 'Playing with dirt and water.', n: 'Tip: Data will leak to the Production Rug.'},
+            {l: 'T', t: 'Trailhead', d: 'The path of Cheerios across the floor.', n: 'Tip: Badge earned: Master of Tummy Time.'},
+            {l: 'U', t: 'Uptime', d: 'Moments of house-wide silence.', n: 'Tip: Average duration: 45 minutes.'},
+            {l: 'V', t: 'Validation Rule', d: 'If on floor, then in mouth.', n: 'Tip: Error: Cannot save "TV Remote" to stomach.'},
+            {l: 'W', t: 'Workflow', d: 'Eat, Play, Poop, Sleep.', n: 'Tip: Strict adherence required for sanity.'},
+            {l: 'X', t: 'XML', d: 'eXtra Messy Living-room.', n: 'Tip: Formatting is chaotic but intentional.'},
+            {l: 'Y', t: 'Yield', d: 'Cuteness vs. Investment ROI.', n: 'Tip: ROI is infinite. Investment is non-refundable.'},
+            {l: 'Z', t: 'Zero-Touch', d: 'The dream of self-sleeping.', n: 'Tip: Release date: Winter 2041.'}
+        ];
+
+        const grid = document.getElementById('alphabet-grid');
+        const consoleBox = document.getElementById('console');
+        const feeCounter = document.getElementById('fee-counter');
+        let totalFees = 0;
+
+        curriculum.forEach(item => {
+            const card = document.createElement('div');
+            card.className = "card-slds p-5 cursor-pointer";
+            card.innerHTML = `
+                <span class="alphabet-letter">${item.l}</span>
+                <h3 class="text-xs font-black text-slate-800 uppercase mt-2 tracking-tighter">${item.t}</h3>
+                <p class="text-[10px] text-slate-500 mt-2 font-medium">${item.d}</p>
+            `;
+            card.onclick = () => {
+                const log = document.createElement('p');
+                log.innerHTML = `<span class="text-yellow-400 font-bold">[TIP]</span> ${item.n}`;
+                consoleBox.prepend(log);
+            };
+            grid.appendChild(card);
+        });
+
+        setInterval(() => {
+            totalFees += 1.25;
+            feeCounter.innerText = `$${totalFees.toLocaleString(undefined, {minimumFractionDigits: 2})}`;
+        }, 2000);
+
+        function triggerAlert() {
+            const log = document.createElement('p');
+            log.className = "text-red-400 font-bold";
+            log.innerHTML = `[CRITICAL] P0 Diaper Outage at ${new Date().toLocaleTimeString()}! Escalating...`;
+            consoleBox.prepend(log);
+            alert("⚠️ PROD ALERT: New Diaper Case assigned to Admin (Dad).");
+        }
+    </script>
+</body>
+</html>
