@@ -6,76 +6,115 @@
     <title>Junior Trailblazer Onboarding</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .alphabet-card { transition: transform 0.2s; cursor: pointer; }
+        .alphabet-card:hover { transform: scale(1.05); }
+    </style>
 </head>
 <body class="bg-slate-50 font-sans">
 
-    <header class="bg-sky-600 text-white py-12 px-6 text-center shadow-lg">
-        <h1 class="text-4xl font-extrabold mb-2">The Ohana Nursery ☁️</h1>
-        <p class="text-xl opacity-90 italic">Optimizing Gaurav & Sonali's Junior Consultant for Q4 2026</p>
-        <div class="mt-6 inline-block bg-white text-sky-600 px-4 py-2 rounded-full font-bold text-sm">
-            STATUS: IN DEVELOPMENT (BETA)
+    <header class="bg-sky-600 text-white py-12 px-6 text-center shadow-lg relative overflow-hidden">
+        <div class="relative z-10">
+            <h1 class="text-4xl font-extrabold mb-2">The Ohana Nursery ☁️</h1>
+            <p class="text-xl opacity-90 italic">Optimizing Gaurav & Sonali's Junior Consultant for Q4 2026</p>
         </div>
+        <i class="fas fa-cloud absolute -bottom-4 -left-10 text-sky-500 text-9xl opacity-20"></i>
+        <i class="fas fa-cloud absolute -top-4 -right-10 text-sky-500 text-9xl opacity-20"></i>
     </header>
 
-    <main class="max-w-5xl mx-auto p-8">
+    <main class="max-w-6xl mx-auto p-8">
         
+        <div class="bg-white border border-slate-200 rounded-lg p-4 mb-8 flex justify-around items-center shadow-sm">
+            <div class="text-center">
+                <p class="text-xs uppercase text-slate-400 font-bold">System Status</p>
+                <p class="text-green-500 font-mono font-bold">● Operational</p>
+            </div>
+            <div class="text-center border-l border-slate-100 pl-8">
+                <p class="text-xs uppercase text-slate-400 font-bold">Sleep Uptime</p>
+                <p id="uptime" class="text-slate-700 font-mono font-bold">02:14:55</p>
+            </div>
+            <div class="text-center border-l border-slate-100 pl-8">
+                <p class="text-xs uppercase text-slate-400 font-bold">Current Sprint</p>
+                <p class="text-slate-700 font-mono font-bold">Week 1: Crawling Discovery</p>
+            </div>
+        </div>
+
         <section class="mb-12">
-            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b-2 border-sky-200 pb-2">The ABCD of Salesforce Parenting</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+                <i class="fas fa-graduation-cap mr-3 text-sky-600"></i> The Junior Consultant Alphabet
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-blue-500">
+                <div class="alphabet-card bg-white p-6 rounded-xl shadow-md border-b-4 border-blue-500" onclick="showTip('Admin', 'Always bring snacks to the meeting.')">
                     <span class="text-3xl font-black text-blue-500">A</span>
-                    <h3 class="font-bold text-lg">AppExchange</h3>
-                    <p class="text-gray-600 text-sm mt-2">Where we find third-party apps to stop the baby from crying when Mom's 'Core Product' fails.</p>
+                    <h3 class="font-bold">Admin</h3>
                 </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-sky-500">
+                <div class="alphabet-card bg-white p-6 rounded-xl shadow-md border-b-4 border-sky-500" onclick="showTip('Backlog', 'If it\'s not in the laundry basket, it doesn\'t exist.')">
                     <span class="text-3xl font-black text-sky-500">B</span>
-                    <h3 class="font-bold text-lg">Backlog</h3>
-                    <p class="text-gray-600 text-sm mt-2">The mountain of laundry that has been 'in sprint' for three weeks.</p>
+                    <h3 class="font-bold">Backlog</h3>
                 </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-indigo-500">
+                <div class="alphabet-card bg-white p-6 rounded-xl shadow-md border-b-4 border-indigo-500" onclick="showTip('CPQ', 'Configure, Poop, Quiet.')">
                     <span class="text-3xl font-black text-indigo-500">C</span>
-                    <h3 class="font-bold text-lg">CPQ</h3>
-                    <p class="text-gray-600 text-sm mt-2">Crying, Pooping, Quitting. The standard toddler configuration lifecycle.</p>
+                    <h3 class="font-bold">CPQ</h3>
+                </div>
+                <div class="alphabet-card bg-white p-6 rounded-xl shadow-md border-b-4 border-blue-400" onclick="showTip('Deployment', 'The 3 AM move to the crib.')">
+                    <span class="text-3xl font-black text-blue-400">D</span>
+                    <h3 class="font-bold">Deployment</h3>
                 </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-blue-400">
-                    <span class="text-3xl font-black text-blue-400">D</span>
-                    <h3 class="font-bold text-lg">Deployment</h3>
-                    <p class="text-gray-600 text-sm mt-2">Moving the baby from the 'Staging' (Stroller) to 'Production' (Crib) without a system crash.</p>
+                <div class="alphabet-card bg-white p-6 rounded-xl shadow-md border-t-4 border-orange-400" onclick="showTip('Ecosystem', 'The living room floor. Watch your step.')">
+                    <span class="text-3xl font-black text-orange-400">E</span>
+                    <h3 class="font-bold text-lg text-slate-700">Ecosystem</h3>
+                    <p class="text-gray-500 text-sm mt-2">The messy environment where toys, cats, and parents interact in chaos.</p>
+                </div>
+
+                <div class="alphabet-card bg-white p-6 rounded-xl shadow-md border-t-4 border-green-400" onclick="showTip('Flow', 'Crying is the ultimate automated trigger.')">
+                    <span class="text-3xl font-black text-green-400">F</span>
+                    <h3 class="font-bold text-lg text-slate-700">Flow</h3>
+                    <p class="text-gray-500 text-sm mt-2">Visualizing how to get milk from point A to point B without a spill exception.</p>
+                </div>
+
+                <div class="alphabet-card bg-white p-6 rounded-xl shadow-md border-t-4 border-purple-400" onclick="showTip('Gating', 'Baby gates are just physical Validation Rules.')">
+                    <span class="text-3xl font-black text-purple-400">G</span>
+                    <h3 class="font-bold text-lg text-slate-700">Governing</h3>
+                    <p class="text-gray-500 text-sm mt-2">Strict rules that prevent the toddler from executing too many 'Scream' calls per minute.</p>
+                </div>
+
+                <div class="alphabet-card bg-white p-6 rounded-xl shadow-md border-t-4 border-red-400" onclick="showTip('Hotfix', 'A pacifier is the ultimate production patch.')">
+                    <span class="text-3xl font-black text-red-400">H</span>
+                    <h3 class="font-bold text-lg text-slate-700">Hotfix</h3>
+                    <p class="text-gray-500 text-sm mt-2">An emergency diaper change performed in the back of a moving car.</p>
                 </div>
 
             </div>
         </section>
 
-        <div class="bg-slate-800 text-white p-8 rounded-2xl shadow-2xl mb-12">
-            <h2 class="text-2xl font-mono text-green-400 mb-4">> System Diagnostics</h2>
-            <ul class="space-y-4 font-mono text-sm">
-                <li class="flex items-start">
-                    <span class="text-green-500 mr-2">[OK]</span> 
-                    <span>User Interface: Extremely high resolution (Cute factor 10/10).</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-yellow-400 mr-2">[WARN]</span> 
-                    <span>Storage: Diaper capacity reached. Triggering immediate cleanup job.</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-red-500 mr-2">[ERR]</span> 
-                    <span>Sleep Mode: Unhandled Exception. Logic loop detected (wakes up every 2 hours).</span>
-                </li>
-            </ul>
+        <div id="console" class="bg-slate-900 text-green-400 p-6 rounded-lg font-mono text-xs h-32 overflow-y-auto mb-8 shadow-inner">
+            <p>> Booting BabyOS...</p>
+            <p>> Loading 'Gaurav_Patience' plugin...</p>
+            <p>> Loading 'Sonali_Love' core module...</p>
+            <p>> System Ready. Click a letter for Consultant Advice.</p>
         </div>
-
-        <footer class="text-center py-10 border-t border-gray-200">
-            <p class="text-gray-500 italic mb-4">"May your validation rules always pass and your coffee never go cold."</p>
-            <button onclick="alert('Sending invite to Salesforce Tower Nursery...')" class="bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-8 rounded-lg transition">
-                Register for Dreamforce 2045
-            </button>
-        </footer>
 
     </main>
 
+    <script>
+        function showTip(term, tip) {
+            const consoleBox = document.getElementById('console');
+            const newLog = document.createElement('p');
+            newLog.innerHTML = `<span class="text-sky-400">[INSIGHT]</span> Analyzing ${term}: ${tip}`;
+            consoleBox.appendChild(newLog);
+            consoleBox.scrollTop = consoleBox.scrollHeight;
+        }
+
+        // Fake Uptime Counter
+        setInterval(() => {
+            const uptime = document.getElementById('uptime');
+            let parts = uptime.innerText.split(':');
+            let sec = parseInt(parts[2]) + 1;
+            if(sec == 60) { sec = 0; }
+            uptime.innerText = `${parts[0]}:${parts[1]}:${sec < 10 ? '0'+sec : sec}`;
+        }, 1000);
+    </script>
 </body>
 </html>
